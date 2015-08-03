@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="kk" content="">
+    <link rel="stylesheet" type="text/css" href="../css/mengbaoless.css">
+    <title>萌宝大赛</title>
+</head>
+
+<body>
+    <!-- 底部tab -->
+    <div class="bottom-bar">
+        <div class="inline-block width33 index" style="border-left:none;"><img class="bottom-btn" src="../img/btn-index.png" ></div><div id="my-baby-tab"  class="inline-block width33 mybaby"><img class="bottom-btn" src="../img/btn-mybaby.png" ></div><div id="want-join-tab"  class="inline-block width33 add"><img class="bottom-btn" src="../img/btn-join.png" ></div><div class="inline-block width33 prize"><img class="bottom-btn" src="../img/btn-prize.png" ></div>
+    </div>
+    <!-- 顶部 宣传图片 -->
+    <div class="top">
+        <img src="../img/top.png" class="mengbao-banner">
+        <div class="activity-rule">活动规则</div>
+    </div> 
+    <!-- 浏览投票统计信息 -->
+    <div class="visit-info-block">
+        <div class="inline-block join-info-width33" style="border-left:none;">
+            <div class="visit-item ">报名人数</div>
+            <div class="visit-num votePeople"></div>
+        </div><div class="inline-block join-info-width33">
+            <div class="visit-item ">投票总数</div>
+            <div class="visit-num voteNum"></div>
+        </div><div class="inline-block join-info-width33">
+            <div class="visit-item">访问量</div>
+            <div class="visit-num visit"></div>
+        </div>        
+    </div>
+
+    <!-- 最新参赛 -->
+    <div class="title-marker">
+        <img src="../img/newjoin.png" width="80%">
+    </div>
+    <div class="new-list"></div>
+    <!-- 搜索 -->
+    <div class="search-wrap">
+        <input class="inline-block search-content" type="text" placeholder="   输入姓名或编号进行搜索"><div class="inline-block search-btn">搜索</div>
+    </div>
+    
+    <!-- 萌宝排行 -->
+    <div class="title-marker">
+        <img src="../img/ranking.png" width="80%">
+    </div>
+    <div class="meng-list">
+    </div>
+
+    <script src="../ui/jquery/jquery.min.js"></script>
+    <script src="../js/mengbaoTool.js"></script>
+    <script src="../js/center.js"></script>
+</body>
+
+</html>
