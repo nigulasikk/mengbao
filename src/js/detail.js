@@ -5,6 +5,36 @@
  * @version $Id$
  */
 var detailOpt = (function() {
+    function bindings(){
+        $(".vote-him").click(function(){
+            vote();
+
+        });
+    }
+    /**
+     * 投票按钮
+     * @param  {[type]} id [description]
+     * @return {[type]}    [description]
+     */
+    function vote() {
+        $.ajax({
+            url: '/baby/vote',
+            type: 'POST',
+            data: {
+                "sfId": sfid,
+                "bId": bid
+            }
+        })
+            .done(function(res) {
+                alert("投票成功!");
+            })
+            .fail(function() {
+                console.log("error");
+                alert("投票失败!");
+
+            });
+
+    }
     function init() {
         $.ajax({
                 url: '/baby/'+bid,
@@ -26,7 +56,8 @@ var detailOpt = (function() {
                     imgListHtml+='<img class="img-response detail-img-item" src="'+imgList[i]+'">';
                 }
                 $(".detail-img-list").append(imgListHtml);
-
+                //按钮事件绑定
+                bindings();
             })
             .fail(function() {
                 console.log("error");
