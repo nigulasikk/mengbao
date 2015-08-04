@@ -19,9 +19,6 @@ body {
   margin: 20px;
   text-align: center;
 }
-.row {
-  width: 100%;
-}
 .width33-base {
   text-align: center;
   width: 33%;
@@ -64,6 +61,7 @@ body {
   border: 1px solid grey;
 }
 .row {
+  width: 100%;
   padding: 15px;
   overflow: hidden;
 }
@@ -235,7 +233,8 @@ body {
   width: 120px;
   margin-top: 5px;
   padding: 4px 3px;
-  width: 280px;
+  width: 200px;
+  margin: 0 auto;
 }
 .mengbao-info {
   text-align: left;
