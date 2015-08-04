@@ -12,10 +12,11 @@ var wxImgOpt = (function () {
         $(".commit-info").click(function () {
             alert("serverIds:"+serverImgIds);
             $.post("/baby", {
-                images: serverImgIds,
-                name: $(".nickname").val(),
-                phone: $(".phone").val(),
-                declaration: $(".description").val()
+                "user.id":sfid,
+                "images": serverImgIds,
+                "name": $(".nickname").val(),
+                "phone": $(".phone").val(),
+                "declaration": $(".description").val()
             }, function (res) {
                 alert("保存成功!");
             });
