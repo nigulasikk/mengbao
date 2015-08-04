@@ -10,7 +10,7 @@ var centerRender = (function() {
     function topMengHtml(imgurl, name, id, geted) {
         return ' <div class="inline-block rank-item width50">' +
             '<div class="rank-img-wrap">' +
-            '   <img class="img-response"  src="' + imgurl + '">' +
+            '   <img class="img-response mengbao-entrance" mid="'+id+'"  src="' + imgurl + '">' +
             '   </div>' +
             '   </div><div class="inline-block rank-item width50">' +
             '      <img src="../img/topbg.png" class="img-response">' +
@@ -26,7 +26,7 @@ var centerRender = (function() {
     function mengbaoItemHtml(imgurl, name, id, geted) {
         return '<div class="inline-block rank-item width50">' +
             '<div class="rank-img-wrap">' +
-            '   <img class ="img-response"  src="'+imgurl+'">' +
+            '   <img class ="img-response mengbao-entrance" mid="'+id+'"  src="'+imgurl+'">' +
             '</div>' +
             '<div class="mengbao-info">' +
             '   姓名:'+name+'&nbsp;&nbsp;编号:' +id+
@@ -116,6 +116,8 @@ var centerRender = (function() {
 
             renderNewList(centerData);
             renderMengbaoList(centerData);
+
+            bindings();
         });
 
 
@@ -128,21 +130,20 @@ var centerRender = (function() {
      */
     function vote(id) {
         $.ajax({
-                url: '/path/to/file',
-                type: 'default GET (Other values: POST)',
-                dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+                url: '/baby/vote',
+                type: 'POST',
                 data: {
-                    param1: 'value1'
-                },
+                    "sfId": sfid,
+                    "bId": id
+                }
             })
-            .done(function() {
-                console.log("success");
+            .done(function(res) {
+                alert("投票成功!");
             })
             .fail(function() {
                 console.log("error");
-            })
-            .always(function() {
-                console.log("complete");
+                alert("投票失败!");
+
             });
 
     }
@@ -151,7 +152,15 @@ var centerRender = (function() {
      * @return {[type]} [description]
      */
     function bindings() {
+        $(".vote-btn").click(function(){
+            var babyId=$(this).attr("mid");
+            vote(babyId);
+        });
 
+        $(".mengbao-entrance").click(function(){
+            var babyId=$(this).attr("mid");
+            window.location.href="babydetail.html?sfid="+sfid+"&bid="+babyId;
+        });
 
     }
     return {

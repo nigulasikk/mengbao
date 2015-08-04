@@ -7,9 +7,9 @@
 var detailOpt = (function() {
     function init() {
         $.ajax({
-                url: '../json/detail.json',
+                url: '/baby/'+bid,
                 type: 'get',
-                dataType: 'json',
+                dataType: 'json'
 
             })
             .done(function(mengbao) {

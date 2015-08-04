@@ -46,7 +46,7 @@ body{margin:0;padding-bottom:100px}
 .vote-num{color:#ef4963;font-size:15px;margin-top:3px}
 .large-red-btn,.red-btn{background:#ef4963;color:#fff;border-radius:5px;text-align:center;padding:4px 3px}
 .red-btn{width:120px;margin-top:5px}
-.large-red-btn{width:200px;margin:0 auto}
+.large-red-btn{width:200px;margin:8px auto}
 .mengbao-info,.top-mengbao-info{text-align:left;line-height:15px;margin-top:5px}
 .rank-top-info{background:url(../img/topbg.png)}
 .best-meng-baby{width:70%;position:absolute;top:10px;left:20px}

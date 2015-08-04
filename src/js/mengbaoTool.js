@@ -85,5 +85,6 @@ var mengbaoTools = (function() {
 
 
 var sfid = mengbaoTools.RequestParameter()['sfid'];
+var bid = mengbaoTools.RequestParameter()['bid'];
 
 mengbaoTools.init();
