@@ -108,7 +108,7 @@ var centerRender = (function() {
      * @return {[type]} [description]
      */
     function showViews() {
-        $.getJSON("../js/center.json", {
+        $.getJSON("../json/center.json", {
             "sfid": sfid
         }, function(centerData) {
 

@@ -7,7 +7,7 @@
 var detailOpt = (function() {
     function init() {
         $.ajax({
-                url: '../js/detail.json',
+                url: '../json/detail.json',
                 type: 'get',
                 dataType: 'json',
 

@@ -10,7 +10,7 @@ var mengbaoTools = (function() {
 
     function getJoinInfo() {
         $.ajax({
-                url: '../js/ifJoin.json',
+                url: '../json/ifJoin.json',
                 type: 'get',
                 dataType: 'json',
 

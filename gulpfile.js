@@ -4,7 +4,7 @@
  * @date    2015-04-09 23:30:20
  * @version $Id$
  */
-var distFileName = "dist";
+var distFileName = "mengbaoDist";
 
 var gulp = require('gulp');
 var pngquant = require('imagemin-pngquant');
@@ -20,6 +20,8 @@ var browserSync = require('browser-sync');
 
  var less = require('gulp-less');
  var watch = require('gulp-watch');
+var revAppend = require('gulp-rev-append');
+
 
 gulp.task('lessToCss', function () {
     //编译src目录下的所有less文件
@@ -40,9 +42,10 @@ gulp.task('live', function() {
 
 
 gulp.task('htmlMin', function() {
-    return gulp.src(['src/*.html'], {
+    return gulp.src(['src/html/*.html'], {
             base: 'src'
         })
+        .pipe(revAppend())
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
@@ -51,7 +54,7 @@ gulp.task('htmlMin', function() {
 
 
 gulp.task('imageMin', function() {
-    return gulp.src(['src/img/**/*', 'webapp/wxshu/img/**/*'], {
+    return gulp.src(['src/img/**/*'], {
             base: 'src'
         })
         .pipe(cache(imagemin({
@@ -83,7 +86,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('jsMin', function() {
-    return gulp.src(['src/js/**/*.js'], {
+    return gulp.src(['src/js/*.js'], {
             base: 'src'
         })
         .pipe(uglify())
