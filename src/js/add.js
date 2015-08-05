@@ -33,7 +33,8 @@ var wxImgOpt = (function () {
             type: "post",
             url: url,
             data: {
-                "curl": curl
+                "curl": curl,
+                "platformId":"8af5535b4ef90b7d014efb8fc3f00bec"
             },
             success: function (response) {
                 wx.config({

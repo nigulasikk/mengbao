@@ -101,6 +101,22 @@ var centerRender = (function() {
 
         $(".meng-list").append(mengbaoHtml);
     }
+ /**
+     * 前50名梦宝列表
+     * @param  {[type]} data [description]
+     * @return {[type]}      [description]
+     */
+    function renderMengbaoListBySearchResult(data) {
+        console.log(data);
+        var mengbaoList=data.mengbaoList;
+        var mengbaoHtml="";
+
+        for(var i=0;i<mengbaoList.length;i++){
+            mengbaoHtml+=mengbaoItemHtml(mengbaoList[i].img, mengbaoList[i].name, mengbaoList[i].id, mengbaoList[i].geted);
+        }
+
+        $(".meng-list").append(mengbaoHtml);
+    }
 
 
     /**
@@ -146,6 +162,29 @@ var centerRender = (function() {
 
             });
 
+    }  /**
+     * 搜索
+     * @param  {[type]} id [description]
+     * @return {[type]}    [description]
+     */
+    function search(text) {
+        $.ajax({
+                url: '/baby/search',
+                type: 'POST',
+                data: {
+                    "q": text
+                }
+            })
+            .done(function(res) {
+                $(".meng-list").empty();
+                renderMengbaoListBySearchResult(res);
+
+            })
+            .fail(function() {
+                alert("搜索失败!");
+
+            });
+
     }
     /**
      * 事件的绑定
@@ -162,6 +201,11 @@ var centerRender = (function() {
             window.location.href="babydetail.html?sfid="+sfid+"&bid="+babyId;
         });
 
+        $(".search-btn").click(function(){
+            var content=$(".search-content").val();
+            search(content);
+        });
+
     }
     return {
         /**
@@ -174,6 +218,7 @@ var centerRender = (function() {
         bindings: function() {
             bindings();
         }
+
     };
 }());
 
