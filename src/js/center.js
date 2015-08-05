@@ -79,10 +79,20 @@ var centerRender = (function() {
         var newJoiner = data.newJoiner;
         var newListHtml = "";
         for (var i = 0; i < newJoiner.length; i++) {
+            if(i%3==0){
+                newListHtml +="<li>";
+            }
             newListHtml += newJoinBlock(newJoiner[i].img, newJoiner[i].name, newJoiner[i].id, newJoiner[i].joinTime);
+            if(i%3==2){
+                newListHtml +="</li>";
+            }
         }
-        $(".new-list").append(newListHtml);
+        newListHtml +="</li>";
 
+
+        $(".new-list").append(newListHtml);
+        //激活banner
+        initBanner();
     }
     /**
      * 前50名梦宝列表
@@ -100,6 +110,7 @@ var centerRender = (function() {
         }
 
         $(".meng-list").append(mengbaoHtml);
+
     }
  /**
      * 前50名梦宝列表
@@ -124,9 +135,7 @@ var centerRender = (function() {
      * @return {[type]} [description]
      */
     function showViews() {
-        $.get("/baby ", {
-            "sfid": sfid
-        }, function(centerData) {
+        $.get("/baby ",function(centerData) {
 
             renderVistInfo(centerData);
 
@@ -224,3 +233,8 @@ var centerRender = (function() {
 
 
 centerRender.renderViews();
+
+function initBanner(){
+    $('.banner').unslider();
+
+}

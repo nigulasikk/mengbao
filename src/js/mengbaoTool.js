@@ -10,9 +10,10 @@ var mengbaoTools = (function() {
 
     function getJoinInfo() {
         $.ajax({
-                url: '../json/ifJoin.json',
+                url: '/baby/joined',
                 type: 'get',
-                dataType: 'json',
+            data:{"sfId":sfid},
+                dataType: 'json'
 
             })
             .done(function(data) {

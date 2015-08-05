@@ -162,6 +162,7 @@ body {
 .new-list {
   border-bottom: 1px solid grey;
   font-size: 12px;
+  padding-left: 0;
 }
 .new-item {
   padding: 10px;
@@ -172,8 +173,8 @@ body {
   margin-top: 5px;
 }
 .img-wrap {
-  width: 100%;
-  height: 100%;
+  width: 80px;
+  height: 80px;
   overflow: hidden;
 }
 /*搜索*/
@@ -203,13 +204,14 @@ body {
 }
 /*萌宝排行*/
 .rank-img-wrap {
-  width: 100%;
-  height: 100%;
+  width: 140px;
+  height: 149px;
   overflow: hidden;
 }
 .rank-item {
   padding: 10px;
   font-size: 12px;
+  vertical-align: top;
 }
 .vote-num {
   color: #ef4963;
@@ -255,7 +257,7 @@ body {
   line-height: 15px;
   margin-top: 5px;
   position: absolute;
-  bottom: 30px;
+  bottom: 15px;
   width: 120px;
 }
 .bigger-font {
@@ -270,4 +272,15 @@ body {
 }
 .rank-info {
   margin-top: 15px;
+}
+.banner {
+  position: relative;
+  overflow: auto;
+  min-height: 190px;
+}
+.banner li {
+  list-style: none;
+}
+.banner ul li {
+  float: left;
 }
