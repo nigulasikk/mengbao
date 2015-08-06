@@ -149,29 +149,6 @@ var centerRender = (function() {
     }
 
     /**
-     * 投票按钮
-     * @param  {[type]} id [description]
-     * @return {[type]}    [description]
-     */
-    function vote(id) {
-        $.ajax({
-                url: '/baby/vote',
-                type: 'POST',
-                data: {
-                    "sfId": sfid,
-                    "bId": id
-                }
-            })
-            .done(function(res) {
-                alert("投票成功!");
-            })
-            .fail(function() {
-                console.log("error");
-                alert("投票失败!");
-
-            });
-
-    }  /**
      * 搜索
      * @param  {[type]} id [description]
      * @return {[type]}    [description]
@@ -202,7 +179,7 @@ var centerRender = (function() {
     function bindings() {
         $(".vote-btn").click(function(){
             var babyId=$(this).attr("mid");
-            vote(babyId);
+            mengbaoTools.vote(babyId);
         });
 
         $(".mengbao-entrance").click(function(){

@@ -7,11 +7,40 @@
 var detailOpt = (function() {
     function bindings(){
         $(".vote-him").click(function(){
-            mengbaoTools.vote(bid);
+            vote();
 
         });
     }
+    /**
+     * 投票按钮
+     * @param  {[type]} id [description]
+     * @return {[type]}    [description]
+     */
+    function vote() {
+        $.ajax({
+            url: '/baby/vote',
+            type: 'POST',
+            data: {
+                "sfId": sfid,
+                "bId": bid
+            }
+        })
+            .done(function(res) {
+                if(res.flag){
+                    alert("投票成功!");
+                    window.location.reload();
 
+                }else{
+                    alert(res.msg);
+                }
+            })
+            .fail(function() {
+                console.log("error");
+                alert("投票失败!");
+
+            });
+
+    }
     function init() {
         $.ajax({
                 url: '/baby/'+bid,
@@ -22,8 +51,8 @@ var detailOpt = (function() {
             .done(function(mengbao) {
 
                 $("#bid").text(mengbao.id);
-                $("#bname").text(mengbao.name);
-                $("#detail-infp").text(mengbao.description);
+                $("#bname").val(mengbao.name);
+                $(".description").text(mengbao.description);
                 $("#rank-num").text(mengbao.ranking);
                 $("#less-than-before").text(mengbao.afterBefore);
 

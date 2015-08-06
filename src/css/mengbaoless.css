@@ -19,6 +19,10 @@ body {
   margin: 20px;
   text-align: center;
 }
+.max-width {
+  max-width: 420px;
+  margin: 0 auto;
+}
 .width33-base {
   text-align: center;
   width: 33%;
@@ -62,7 +66,7 @@ body {
 }
 .row {
   width: 100%;
-  padding: 15px;
+  padding: 15px 0;
   overflow: hidden;
 }
 .col-xs-12 {
@@ -101,16 +105,19 @@ body {
 .col-xs-1 {
   width: 8.33333333%;
 }
+.top {
+  position: relative;
+}
 /*活动按钮*/
 .activity-rule {
   position: absolute;
   right: 10px;
-  top: 5px;
+  top: 9px;
   border: 1px solid #ef4963;
   color: #ef4963;
   background: transparent;
-  height: 18px;
-  line-height: 18px;
+  height: 22px;
+  line-height: 22px;
   vertical-align: middle;
   font-size: 12px;
   padding: 0 5px 0 5px;
@@ -160,7 +167,6 @@ body {
 }
 /*最新参赛*/
 .new-list {
-  border-bottom: 1px solid grey;
   font-size: 12px;
   padding-left: 0;
 }

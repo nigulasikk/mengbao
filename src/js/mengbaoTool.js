@@ -7,7 +7,40 @@
 
 
 var mengbaoTools = (function() {
+    /**
+     * 投票按钮
+     * @param  {[type]} id [description]
+     * @return {[type]}    [description]
+     */
+    function vote(babyid) {
+        $.ajax({
+            url: '/baby/vote',
+            type: 'POST',
+            data: {
+                "sfId": sfid,
+                "bId": babyid
+            }
+        })
+            .done(function(res) {
+                if(res.flag){
+                    alert("投票成功!");
+                    window.location.reload();
 
+                }else{
+                    if(res.msg=="未关注"){
+                        alert("----广告+图文");
+                    }else{
+                        alert(res.msg);
+                    }
+                }
+            })
+            .fail(function() {
+                console.log("error");
+                alert("投票失败!");
+
+            });
+
+    }
     function getJoinInfo() {
         $.ajax({
                 url: '/baby/joined',
@@ -18,6 +51,7 @@ var mengbaoTools = (function() {
             })
             .done(function(data) {
                 showTab(data.ifJoin);
+                $("#my-baby-tab").attr("bid",data.bId);
             })
             .fail(function() {
                 console.log("error");
@@ -59,7 +93,8 @@ var mengbaoTools = (function() {
         });
 
         $(document).on("click", ".mybaby", function() {
-            window.location.href = "babydetail.html?sfid=" + sfid + "&bid="+sfid;
+            var babyid=$(this).attr("bid");
+            window.location.href = "mybaby.html?sfid=" + sfid + "&bid="+babyid;
         });
 
         $(document).on("click", ".prize", function() {
@@ -70,15 +105,32 @@ var mengbaoTools = (function() {
             window.location.href = "activity.html?sfid=" + sfid;
         });
     }
+    function checkWxBrowser(){
+        // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('about:blank', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    }
     return {
         RequestParameter: function() {
             return RequestParameter();
         },
 
         init: function() {
+//            checkWxBrowser();
             tabsBindings();
             getJoinInfo();
 
+
+        },
+        vote:function(){
+            vote();
         }
     };
 

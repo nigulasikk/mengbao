@@ -1,18 +1,20 @@
 .img-wrap,.rank-img-wrap,.row{overflow:hidden}
+.mengbao-banner,.top{position:relative}
 .banner ul li,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{float:left}
 html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 body{margin:0;padding-bottom:100px}
-.mengbao-banner{width:100%;position:relative}
+.mengbao-banner{width:100%}
 .width33,.width33-base{box-sizing:border-box;text-align:center;width:33%}
 .text-center{text-align:center}
 .title-marker{margin:20px;text-align:center}
+.max-width{max-width:420px;margin:0 auto}
 .width50{text-align:center;width:50%;box-sizing:border-box}
 .img-response{width:100%}
 .base-color{color:#ef4963}
 .container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
 .input-form{width:150px;height:18px;border:1px solid grey}
 .col-xs-12,.row{width:100%}
-.row{padding:15px}
+.row{padding:15px 0}
 .col-xs-11{width:91.66666667%}
 .col-xs-10{width:83.33333333%}
 .col-xs-9{width:75%}
@@ -24,7 +26,7 @@ body{margin:0;padding-bottom:100px}
 .col-xs-3{width:25%}
 .col-xs-2{width:16.66666667%}
 .col-xs-1{width:8.33333333%}
-.activity-rule{position:absolute;right:10px;top:5px;border:1px solid #ef4963;color:#ef4963;background:0 0;height:18px;line-height:18px;vertical-align:middle;font-size:12px;padding:0 5px}
+.activity-rule{position:absolute;right:10px;top:9px;border:1px solid #ef4963;color:#ef4963;background:0 0;height:22px;line-height:22px;vertical-align:middle;font-size:12px;padding:0 5px}
 .inline-block{display:inline-block;position:relative}
 .width33{border-left:1px solid #fff;line-height:50px}
 .bottom-bar{position:fixed;bottom:0;width:100%;background:#ef4963;height:50px;z-index:10}
@@ -32,7 +34,7 @@ body{margin:0;padding-bottom:100px}
 .visit-info-block{border-top:orange 1px solid;border-bottom:orange 1px solid;padding-top:10px;padding-bottom:10px;margin-top:10px}
 .join-info-width33{text-align:center;width:33%;box-sizing:border-box;border-left:1px solid orange;line-height:20px}
 .visit-num{font-size:14px;color:orange}
-.new-list{border-bottom:1px solid grey;font-size:12px}
+.new-list{font-size:12px;padding-left:0}
 .new-item{padding:10px}
 .joiner-info{text-align:left;line-height:15px;margin-top:5px}
 .img-wrap{width:80px;height:80px}
@@ -49,10 +51,10 @@ body{margin:0;padding-bottom:100px}
 .mengbao-info,.top-mengbao-info{text-align:left;line-height:15px;margin-top:5px}
 .rank-top-info{background:url(../img/topbg.png)}
 .best-meng-baby{width:70%;position:absolute;top:10px;left:20px}
-.top-mengbao-info{position:absolute;bottom:30px;width:120px}
+.top-mengbao-info{position:absolute;bottom:15px;width:120px}
 .bigger-font{font-size:18px}
 .detai-info{max-width:90%;margin:0 auto}
 .detail-img-item{margin-top:10px}
 .rank-info{margin-top:15px}
-.banner{position:relative;overflow:auto}
+.banner{position:relative;overflow:auto;min-height:190px}
 .banner li{list-style:none}
