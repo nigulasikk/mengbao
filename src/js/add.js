@@ -10,13 +10,14 @@ var wxImgOpt = (function () {
 
     function bindings() {
         $(".commit-info").click(function () {
-            alert("serverIds:"+serverImgIds);
+$(".test-text").text(serverImgIds);
             $.post("/baby", {
                 "user.id":sfid,
                 "images": serverImgIds,
                 "name": $(".nickname").val(),
                 "phone": $(".phone").val(),
-                "declaration": $(".description").val()
+                "declaration": $(".description").val(),
+                "platformId":"8af5535b4ef90b7d014efb8fc3f00bec"
             }, function (res) {
                 alert("保存成功!");
             });

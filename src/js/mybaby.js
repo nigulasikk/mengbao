@@ -19,7 +19,7 @@ var detailOpt = (function() {
             .done(function(mengbao) {
 
                 $("#bid").text(mengbao.id);
-                $("#bname").val(mengbao.name);
+                $("#bname").text(mengbao.name);
                 $(".description").text(mengbao.description);
                 $("#rank-num").text(mengbao.ranking);
                 $("#less-than-before").text(mengbao.afterBefore);

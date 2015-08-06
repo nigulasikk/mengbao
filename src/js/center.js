@@ -92,7 +92,7 @@ var centerRender = (function() {
 
         $(".new-list").append(newListHtml);
         //激活banner
-        initBanner();
+        mengbaoTools.initBanner();
     }
     /**
      * 前50名梦宝列表
@@ -210,8 +210,3 @@ var centerRender = (function() {
 
 
 centerRender.renderViews();
-
-function initBanner(){
-    $('.banner').unslider();
-
-}

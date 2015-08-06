@@ -135,6 +135,12 @@ var mengbaoTools = (function() {
             opened.close();
         }
     }
+
+    function initBanner(){
+        $('.banner').unslider();
+
+    }
+
     return {
         RequestParameter: function() {
             return RequestParameter();
@@ -144,11 +150,14 @@ var mengbaoTools = (function() {
 //            checkWxBrowser();
             tabsBindings();
             getJoinInfo();
-
+//            initBanner();
 
         },
-        vote:function(){
-            vote();
+        initBanner:function(){
+            initBanner();
+        },
+        vote:function(babyid){
+            vote(babyid);
         }
     };
 
