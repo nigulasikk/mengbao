@@ -6,41 +6,9 @@
  */
 var detailOpt = (function() {
     function bindings(){
-        $(".vote-him").click(function(){
-            vote();
-
-        });
-    }
-    /**
-     * 投票按钮
-     * @param  {[type]} id [description]
-     * @return {[type]}    [description]
-     */
-    function vote() {
-        $.ajax({
-            url: '/baby/vote',
-            type: 'POST',
-            data: {
-                "sfId": sfid,
-                "bId": bid
-            }
-        })
-            .done(function(res) {
-                if(res.flag){
-                    alert("投票成功!");
-                    window.location.reload();
-
-                }else{
-                    alert(res.msg);
-                }
-            })
-            .fail(function() {
-                console.log("error");
-                alert("投票失败!");
-
-            });
 
     }
+
     function init() {
         $.ajax({
                 url: '/baby/'+bid,

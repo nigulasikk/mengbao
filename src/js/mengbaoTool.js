@@ -28,7 +28,20 @@ var mengbaoTools = (function() {
 
                 }else{
                     if(res.msg=="未关注"){
-                        alert("----广告+图文");
+                        swal({
+                            title: "",
+                            text: "投票要先关注荔枝妈妈.",
+                            imageUrl: randomPic(),
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "图文教程",
+                            cancelButtonText: "取消",
+                            closeOnConfirm: false
+                        },function(){
+                            //TODO:图文链接
+                            window.location.href="http://www.baidu.com";
+                        });
+
                     }else{
                         alert(res.msg);
                     }
@@ -40,6 +53,11 @@ var mengbaoTools = (function() {
 
             });
 
+    }
+
+    function randomPic(){
+        var randomNum=Math.floor(Math.random()*3);
+        return "../img/adv/ad"+randomNum+".jpg";
     }
     function getJoinInfo() {
         $.ajax({
