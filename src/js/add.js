@@ -19,7 +19,9 @@ $(".test-text").text(serverImgIds);
                 "declaration": $(".description").val(),
                 "platformId":"8af5535b4ef90b7d014efb8fc3f00bec"
             }, function (res) {
-                alert("保存成功!");
+                alert("恭喜你，报名成功!");
+                window.location.href = "center.html?sfid=" + sfid;
+
             });
         });
 
