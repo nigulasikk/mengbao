@@ -8,6 +8,8 @@
     <meta name="description" content="">
     <meta name="kk" content="">
     <link rel="stylesheet" type="text/css" href="../css/mengbaoless.css">
+    <link rel="stylesheet" href="../ui/sweetalert/sweetalert.css">
+
     <title>梦宝大赛奖品</title>
 </head>
 
@@ -43,11 +45,34 @@
     </div>
     <img src="../img/jp2.jpg" class="mengbao-banner">
     <img src="../img/jp3.jpg" class="mengbao-banner">
+    <div class="banner max-width">
+        <ul style="padding:0;margin:0;">
+            <li>
+                <div class="top max-width" >
+                    <img src="../img/adv/prizeAd0.jpg" class="mengbao-banner">
+                </div>
+            </li> <li>
+                <div class="top max-width" >
+                    <img src="../img/adv/prizeAd1.jpg" class="mengbao-banner">
+                </div>
+            </li> <li>
+                <div class="top max-width" >
+                    <img src="../img/adv/prizeAd2.jpg" class="mengbao-banner">
+                </div>
+            </li>
 
+
+
+        </ul>
+    </div>
 
     <script src="../ui/jquery/jquery.min.js"></script>
+    <script src="../ui/jquery.event.swipe.js"></script>
+    <script src="../ui/unslide/unslider.min.js"></script>
     <script src="../js/mengbaoTool.js"></script>
-    
+    <script>
+        mengbaoTools.initBanner();
+    </script>
 </body>
 
 </html>
