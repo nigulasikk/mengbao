@@ -121,7 +121,6 @@ var centerRender = (function() {
         }
 
         $(".meng-list").append(mengbaoHtml);
-        bindings();
 
     }
  /**
@@ -143,6 +142,8 @@ var centerRender = (function() {
         }
 
         $(".meng-list").append(mengbaoHtml);
+
+     bindings();
     }
 
 
