@@ -13,15 +13,11 @@ var wxImgOpt = (function () {
             if(sfid==1){
                 swal({
                     title: "",
-                    text: "参加活动请先关注荔枝妈妈.",
-                    imageUrl: mengbaoTools.randomPic(),
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "图文教程",
-                    cancelButtonText: "取消",
-                    closeOnConfirm: false
+                    showConfirmButton: false,
+                    text: "请进入微信公众号“荔枝妈妈”点击菜单栏【萌宝大赛】进行投票<a href='http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd'><button>图文教程</button></a><img style='margin-top:30px;' width='220' src='"+mengbaoTools.randomPic()+"'>",
+                    html: true
                 },function(){
-                    window.location.href="http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd";
+
                 });
 
             }else{
@@ -50,13 +46,30 @@ var wxImgOpt = (function () {
                 "platformId":"8af5535b4ef90b7d014efb8fc3f00bec"
             }, function (res) {
                 alert("恭喜你，报名成功!");
-                window.location.href = "center.html?sfid=" + sfid;
+                goToMyBaby();
 
             });
         }
 
     }
 
+    function goToMyBaby(){
+        $.ajax({
+            url: '/baby/joined',
+            type: 'get',
+            data:{"sfId":sfid},
+            dataType: 'json'
+
+        })
+            .done(function(data) {
+
+                window.location.href = "mybaby.html?sfid=" + sfid + "&bid="+data.bId;
+
+            })
+            .fail(function() {
+                console.log("error");
+            });
+    }
 //初始化微信接口
     function initWx() {
         var curl = window.location.href;

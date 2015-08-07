@@ -123,7 +123,7 @@ var centerRender = (function() {
         var mengbaoHtml="";
 
      if(mengbaoList.length==0){
-         mengbaoHtml+='<p style="text-align: center;">对不起，没有搜索到符合条件的用户</p>';
+         mengbaoHtml+='<p style="text-align: center;">没有搜索到符合条件的用户!</p>';
 
      }
         for(var i=0;i<mengbaoList.length;i++){

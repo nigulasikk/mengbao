@@ -30,15 +30,10 @@ var mengbaoTools = (function() {
                     if(res.msg=="未关注"){
                         swal({
                             title: "",
-                            text: "投票要先关注荔枝妈妈.",
-                            imageUrl: randomPic(),
-                            showCancelButton: true,
-                            confirmButtonColor: "#DD6B55",
-                            confirmButtonText: "图文教程",
-                            cancelButtonText: "取消",
-                            closeOnConfirm: false
+                            showConfirmButton: false,
+                            text: "请进入微信公众号“荔枝妈妈”点击菜单栏【萌宝大赛】进行投票<a href='http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd'><button>图文教程</button></a><img style='margin-top:30px;' width='220' src='"+mengbaoTools.randomPic()+"'>",
+                            html: true
                         },function(){
-                            window.location.href="http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd";
                         });
 
                     }else{
@@ -208,7 +203,7 @@ var mengbaoTools = (function() {
             shareTip();
         },
         randomPic:function(){
-            randomPic();
+            return randomPic();
         }
     };
 
