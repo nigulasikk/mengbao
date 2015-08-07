@@ -210,12 +210,35 @@ var centerRender = (function() {
         });
 
     }
+
+
+    //随机广告位
+    function topRandomAd(){
+        var ad1='<li> <div class="top max-width" > <a href="http://mp.weixin.qq.com/s?__biz=MzAwOTMzNzkwMQ==&mid=208574211&idx=1&sn=8f911382db59a8518b26240af5081882#rd"> <img src="../img/adv/indexAd0.jpg" class="mengbao-banner"> </a> </div> </li>';
+        var ad2=' <li> <div class="top max-width" > <a href="http://mp.weixin.qq.com/s?__biz=MzAwMTMwMDgyNA==&mid=210500484&idx=1&sn=e60b76d78fe80ea59eeb7f29209838e4&scene=2&from=timeline&isappinstalled=0#rd"> <img src="../img/adv/indexAd1.jpg" class="mengbao-banner"> </a> </div> </li>';
+        var ad3='<li> <div class="top max-width" > <a href="http://mp.weixin.qq.com/s?__biz=MzA3MzQ4OTk2OQ==&amp;mid=208308928&idx=1&sn=5b9f8f1ede4556c8d934030327756b45&scene=0#rd"> <img src="../img/adv/indexAd2.jpg" class="mengbao-banner"> </a> </div> </li>';
+        var a=[ad1,ad2,ad3].sort(function(a,b){ return Math.random()>.5 ? -1 : 1;});
+        var out=[];
+         out.push('<li><div class="top max-width" ><img src="../img/top.png" class="mengbao-banner"> </div></li>');
+        var concatedArray=out.concat(a);
+        var outHtml="";
+        for(var i=0;i<concatedArray.length;i++){
+            outHtml+=concatedArray[i];
+        }
+
+        $("#topAdv").append(outHtml);
+
+    }
     return {
+        topRandomAd:function(){
+            topRandomAd();
+        },
         /**
          * 渲染页面
          * @return {[type]} [description]
          */
         renderViews: function() {
+            topRandomAd();
             showViews();
         },
         bindings: function() {

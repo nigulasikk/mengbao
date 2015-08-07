@@ -14,7 +14,7 @@ var wxImgOpt = (function () {
                 swal({
                     title: "",
                     showConfirmButton: false,
-                    text: "请进入微信公众号“荔枝妈妈”点击菜单栏【萌宝大赛】进行投票<a href='http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd'><button>图文教程</button></a><img style='margin-top:30px;' width='220' src='"+mengbaoTools.randomPic()+"'>",
+                    text: "请进入微信公众号“荔枝妈妈”点击菜单栏【萌宝大赛】进行投票<br><a href='http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd'><button>点我投票</button></a><img style='margin-top:30px;' width='220' src='"+mengbaoTools.randomPic()+"'>",
                     html: true
                 },function(){
 
