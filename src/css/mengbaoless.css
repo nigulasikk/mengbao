@@ -212,6 +212,7 @@ body {
 .rank-img-wrap {
   width: 140px;
   height: 149px;
+  position: relative;
   overflow: hidden;
 }
 .rank-item {

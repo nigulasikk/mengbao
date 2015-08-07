@@ -1,4 +1,14 @@
 var centerRender = (function() {
+    function badge2or3(num){
+        if(num==1){
+            return '<img src="../img/yin.png" style="width: 80px;position: absolute;left: 0;bottom: 0;">';
+        }else if(num==2){
+            return '<img src="../img/tong.png" style="width: 80px;position: absolute;left: 0;bottom: 0;">';
+
+        }else{
+            return "";
+        }
+    }
     /**
      * 最萌宝贝 模板
      * @param  {[type]} imgurl [description]
@@ -11,6 +21,7 @@ var centerRender = (function() {
         return ' <div class="inline-block rank-item width50">' +
             '<div class="rank-img-wrap">' +
             '   <img class="img-response mengbao-entrance" mid="'+id+'"  src="' + imgurl + '">' +
+            '<img src="../img/jin.png" style="width: 80px;position: absolute;left: 0;bottom: 0;">'+
             '   </div>' +
             '   </div><div class="inline-block rank-item width50">' +
             '      <img src="../img/topbg.png" class="img-response">' +
@@ -23,10 +34,11 @@ var centerRender = (function() {
             ' </div>';
     }
 
-    function mengbaoItemHtml(imgurl, name, id, geted) {
+    function mengbaoItemHtml(imgurl, name, id, geted,iter) {
         return '<div class="inline-block rank-item width50">' +
             '<div class="rank-img-wrap">' +
             '   <img class ="img-response mengbao-entrance" mid="'+id+'"  src="'+imgurl+'">' +
+            badge2or3(iter)+
             '</div>' +
             '<div class="mengbao-info">' +
             '   姓名:'+name+'&nbsp;&nbsp;编号:' +id+
@@ -100,16 +112,16 @@ var centerRender = (function() {
      * @return {[type]}      [description]
      */
     function renderMengbaoList(data) {
-        console.log(data);
         var mengbaoList=data.mengbaoList;
         var mengbaoHtml="";
         mengbaoHtml=topMengHtml(mengbaoList[0].img, mengbaoList[0].name, mengbaoList[0].id, mengbaoList[0].geted);
 
         for(var i=1;i<mengbaoList.length;i++){
-            mengbaoHtml+=mengbaoItemHtml(mengbaoList[i].img, mengbaoList[i].name, mengbaoList[i].id, mengbaoList[i].geted);
+            mengbaoHtml+=mengbaoItemHtml(mengbaoList[i].img, mengbaoList[i].name, mengbaoList[i].id, mengbaoList[i].geted,i);
         }
 
         $(".meng-list").append(mengbaoHtml);
+        bindings();
 
     }
  /**
