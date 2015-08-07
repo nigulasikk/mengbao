@@ -119,7 +119,7 @@ var centerRender = (function() {
      */
     function renderMengbaoListBySearchResult(data) {
         console.log(data);
-        var mengbaoList=data.mengbaoList;
+        var mengbaoList=data;
         var mengbaoHtml="";
 
         for(var i=0;i<mengbaoList.length;i++){

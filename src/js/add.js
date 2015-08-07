@@ -10,6 +10,37 @@ var wxImgOpt = (function () {
 
     function bindings() {
         $(".commit-info").click(function () {
+            if(sfid==1){
+                swal({
+                    title: "",
+                    text: "参加活动请先关注荔枝妈妈.",
+                    imageUrl: mengbaoTools.randomPic(),
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "图文教程",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false
+                },function(){
+                    window.location.href="http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd";
+                });
+
+            }else{
+                apply();
+            }
+
+        });
+
+
+    }
+    //参赛验证和请求
+    function apply(){
+        if($(".nickname").val()==""){
+            alert("请填写名字");
+        }else if($(".phone").val().length!=11){
+            alert("请填写11位手机号码，以方便我们联系到您！");
+        }else if(serverImgIds.length==0){
+            alert("参赛必须要上传一张以上的宝宝图片!");
+        }else{
             $.post("/baby", {
                 "user.id":sfid,
                 "images": serverImgIds,
@@ -22,8 +53,7 @@ var wxImgOpt = (function () {
                 window.location.href = "center.html?sfid=" + sfid;
 
             });
-        });
-
+        }
 
     }
 

@@ -38,8 +38,7 @@ var mengbaoTools = (function() {
                             cancelButtonText: "取消",
                             closeOnConfirm: false
                         },function(){
-                            //TODO:图文链接
-                            window.location.href="http://www.baidu.com";
+                            window.location.href="http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd";
                         });
 
                     }else{
@@ -207,6 +206,9 @@ var mengbaoTools = (function() {
         },
         shareTip:function(){
             shareTip();
+        },
+        randomPic:function(){
+            randomPic();
         }
     };
 
