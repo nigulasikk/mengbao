@@ -47,7 +47,7 @@ var centerRender = (function() {
     function newJoinBlock(imgurl, name, id, time) {
         return '<div class="inline-block width33-base new-item">' +
             '<div class="img-wrap">' +
-            '    <img class="img-response" src="' + imgurl + '" >' +
+            '    <img class="img-response mengbao-entrance" mid="'+id+'" src="' + imgurl + '" >' +
             '</div>' +
             '<div class="joiner-info">' +
             '       姓名：' + name +
@@ -122,6 +122,10 @@ var centerRender = (function() {
         var mengbaoList=data;
         var mengbaoHtml="";
 
+     if(mengbaoList.length==0){
+         mengbaoHtml+='<p style="text-align: center;">对不起，没有搜索到符合条件的用户</p>';
+
+     }
         for(var i=0;i<mengbaoList.length;i++){
             mengbaoHtml+=mengbaoItemHtml(mengbaoList[i].img, mengbaoList[i].name, mengbaoList[i].id, mengbaoList[i].geted);
         }
