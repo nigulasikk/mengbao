@@ -10,13 +10,12 @@ var wxImgOpt = (function () {
 
     function bindings() {
         $(".commit-info").click(function () {
-$(".test-text").text(serverImgIds);
             $.post("/baby", {
                 "user.id":sfid,
                 "images": serverImgIds,
                 "name": $(".nickname").val(),
                 "phone": $(".phone").val(),
-                "declaration": $(".description").val(),
+                "description": $(".description").val(),
                 "platformId":"8af5535b4ef90b7d014efb8fc3f00bec"
             }, function (res) {
                 alert("恭喜你，报名成功!");
@@ -80,8 +79,9 @@ $(".test-text").text(serverImgIds);
             success: function (res) {
                 localImgIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
 //                previewImage(localImgIds[0],localImgIds);
-                $("#preview-imgs").append(imgListHtml(localImgIds));
                 uploadImgs(localImgIds);
+                $("#preview-imgs").append(imgListHtml(localImgIds));
+
 
 
             }
