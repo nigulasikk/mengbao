@@ -23,19 +23,22 @@
     </div> 
 
     <div class="detai-info text-center">
+        <div class="rank-info bigger-font">
+            排名：<span class="base-color" id="rank-num"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;与前一名相差：<span id="less-than-before" class="base-color"></span></p>
+        </div>
         <p class="name bigger-font">姓名:<span id="bname" class="base-color"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选手编号:<span id="bid" class="base-color"></span></p>
         <p>详情：<span id="detail-infp"></span></p>
         <div class="detail-img-list">
             
         </div>
-        <div class="rank-info bigger-font">
-            排名:<span class="base-color" id="rank-num"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;与前一名相差:<span id="less-than-before" class="base-color"></span></p>
-        </div>
+
          <div class="large-red-btn vote-him">投TA一票</div>
         <a style="text-decoration: none;" href="http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd">
             <div class="large-red-btn" >我也要参加</div>
 
         </a>
+        <div class="large-red-btn share">分享拉票</div>
+
         <img src="../img/jp2.jpg" class="mengbao-banner">
         <img src="../img/jp1.png" class="mengbao-banner">
 
@@ -60,7 +63,9 @@
 
     </div>
     <script src="../ui/jquery/jquery.min.js"></script>
-    <script src="../js/mengbaoTool.js"></script>
+   <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+   <script src="../js/mengbaoTool.js"></script>
     
     <script src="../js/detail.js"></script>
 </body>

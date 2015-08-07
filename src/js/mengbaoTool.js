@@ -157,7 +157,7 @@ var mengbaoTools = (function() {
                     timestamp: response['timestamp'], // 必填，生成签名的时间戳
                     nonceStr: response['noncestr'], // 必填，生成签名的随机串
                     signature: response['sign_result'], // 必填，签名，见附录1
-                    jsApiList: []
+                    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
 
                 });
             },
@@ -166,6 +166,23 @@ var mengbaoTools = (function() {
             }
         });
     }
+    //加载中效果
+    function shareTip() {
+
+        var mask = ' <div id="mask" style="z-index:9999;background-color: black;opacity: 0.8;position:fixed;top:0;bottom:0;left:0;right:0;">' +
+            '<img style="float: right;" src="../img/share.png">'+
+            '</div>';
+
+        $("body").prepend(mask);
+        $("#mask").click(function(){
+            closeShareTip();
+        });
+    }
+
+    function closeShareTip() {
+        $("#mask").remove();
+    }
+
     return {
         RequestParameter: function() {
             return RequestParameter();
@@ -178,11 +195,18 @@ var mengbaoTools = (function() {
 //            initBanner();
 
         },
+
         initBanner:function(){
             initBanner();
         },
+        initWxShare:function(){
+            initWxShare();
+        },
         vote:function(babyid){
             vote(babyid);
+        },
+        shareTip:function(){
+            shareTip();
         }
     };
 
@@ -195,35 +219,3 @@ var bid = mengbaoTools.RequestParameter()['bid'];
 mengbaoTools.init();
 
 
-
-wx.ready(function() {
-    wx.onMenuShareTimeline({
-        title: '在微信' + shareDay + '天，我已经记录了' + shareState + '条状态、' + sharePic + '个图片、' + shareWords + '个文字', // 分享标题
-        link: 'http://whiletime.com/timemachineDist/html/timemachine.html?openId=' + RequestParameter()['openId'], // 分享链接
-        imgUrl: 'http://whiletime.com/timemachineDist/img/sharepic.jpg', // 分享图标
-        success: function() {
-            // 用户确认分享后执行的回调函数
-            $.get("/marketingactivity/f89aa7644e1ea45e014e1eff343c12b6/addshare");
-        },
-        cancel: function() {
-            // 用户取消分享后执行的回调函数
-        }
-    });
-
-    wx.onMenuShareAppMessage({
-        title: '时光机', // 分享标题
-        desc: '在微信' + shareDay + '天，我已经记录了' + shareState + '条状态、' + sharePic + '个图片、' + shareWords + '个文字', // 分享描述
-        link: 'http://whiletime.com/timemachineDist/html/timemachine.html?openId=' + RequestParameter()['openId'], // 分享链接
-        imgUrl: 'http://whiletime.com/timemachineDist/img/sharepic.jpg', // 分享图标
-        success: function() {
-            // 用户确认分享后执行的回调函数
-            $.get("/marketingactivity/f89aa7644e1ea45e014e1eff343c12b6/addshare");
-
-        },
-        cancel: function() {
-            // 用户取消分享后执行的回调函数
-        }
-    });
-
-    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-});
