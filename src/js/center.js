@@ -105,6 +105,8 @@ var centerRender = (function() {
         $(".new-list").append(newListHtml);
         //激活banner
         mengbaoTools.initBanner();
+
+
     }
     /**
      * 前50名梦宝列表
