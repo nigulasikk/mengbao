@@ -50,7 +50,7 @@ var mengbaoTools = (function() {
     }
 
     function randomPic(){
-        var randomNum=Math.floor(Math.random()*3);
+        var randomNum=Math.floor(Math.random()*4);
         return "../img/adv/ad"+randomNum+".jpg";
     }
     function getJoinInfo() {
@@ -132,15 +132,27 @@ var mengbaoTools = (function() {
 
     function initBanner(){
 
-
-        $('.banner').unslider({
+        var slidey =  $('.banner').unslider({
             speed: 500,               //  The speed to animate each slide (in milliseconds)
             delay: 3000,              //  The delay between slide animations (in milliseconds)
             complete: function() {},  //  A function that gets called after every slide animation
             keys: true,               //  Enable keyboard (left, right) arrow shortcuts
             dots: false,               //  Display dot navigation
             fluid: false              //  Support responsive design. May break non-responsive designs
-        });
+        }),
+            slideData = slidey.data('unslider');
+
+
+         $(".banner").on('swipeleft', function(e) {
+             slideData.next();
+
+
+         });
+         $(".banner").on('swiperight', function(e) {
+             slideData.prev();
+
+
+         });
 
 
     }
@@ -196,7 +208,6 @@ var mengbaoTools = (function() {
 //            checkWxBrowser();
             tabsBindings();
             getJoinInfo();
-//            initBanner();
 
         },
 

@@ -219,7 +219,8 @@ var centerRender = (function() {
         var ad1='<li> <div class="top max-width" > <a href="http://mp.weixin.qq.com/s?__biz=MzAwOTMzNzkwMQ==&mid=208574211&idx=1&sn=8f911382db59a8518b26240af5081882#rd"> <img src="../img/adv/indexAd0.jpg" class="mengbao-banner"> </a> </div> </li>';
         var ad2=' <li> <div class="top max-width" > <a href="http://mp.weixin.qq.com/s?__biz=MzAwMTMwMDgyNA==&mid=210500484&idx=1&sn=e60b76d78fe80ea59eeb7f29209838e4&scene=2&from=timeline&isappinstalled=0#rd"> <img src="../img/adv/indexAd1.jpg" class="mengbao-banner"> </a> </div> </li>';
         var ad3='<li> <div class="top max-width" > <a href="http://mp.weixin.qq.com/s?__biz=MzA3MzQ4OTk2OQ==&amp;mid=208308928&idx=1&sn=5b9f8f1ede4556c8d934030327756b45&scene=0#rd"> <img src="../img/adv/indexAd2.jpg" class="mengbao-banner"> </a> </div> </li>';
-        var a=[ad1,ad2,ad3].sort(function(a,b){ return Math.random()>.5 ? -1 : 1;});
+        var ad4='<li> <div class="top max-width" > <a href="http://mp.weixin.qq.com/s?__biz=MzAwMTEyNzI5Mg==&mid=205231980&idx=1&sn=6e7c71a3be63f4543d74e481685a441b&scene=1&key=0acd51d81cb052bc8eb309208d7498f0fff5f5f324b4956ce8965599505f92414934d1c2c5dbf4b00504967be50330ed&ascene=1&uin=MTQ5NzkwMzIyMA%3D%3D&devicetype=webwx&version=70000001&pass_ticket=DlYd7cF3JxKRIgp8L1FtELAG9DK7MokXcFHis2pIGvsoaLyWSZNv9BHpK3x1Z4%2Fd"> <img src="../img/adv/indexAd3.jpg" class="mengbao-banner"> </a> </div> </li>';
+        var a=[ad1,ad2,ad3,ad4].sort(function(a,b){ return Math.random()>.5 ? -1 : 1;});
         var out=[];
          out.push('<li><div class="top max-width" ><img src="../img/top.png" class="mengbao-banner"> </div></li>');
         var concatedArray=out.concat(a);
