@@ -58,8 +58,8 @@ mengbaoTools.initWxShare();
 wx.ready(function() {
     wx.onMenuShareTimeline({
         title: '我是'+bid+'号'+$("#bname").text()+'，正在参加“荔枝妈妈”萌宝大赛，叔叔阿姨、哥哥姐姐帮忙投一票呀!', // 分享标题
-        link: 'http://hz3.whiletime.com/mengbaoDist/html/babydetail.html?sfid=1&bid='+bid, // 分享链接
-        imgUrl: 'http://hz3.whiletime.com/mengbaoDist/img/top.png', // 分享图标
+        link: 'http://whiletime.com/mengbaoDist/html/babydetail.html?sfid=1&bid='+bid, // 分享链接
+        imgUrl: 'http://whiletime.com/mengbaoDist/img/top.png', // 分享图标
         success: function() {
 
         },
@@ -73,8 +73,8 @@ wx.ready(function() {
         title: '我是'+bid+'号'+$("#bname").text()+'，正在参加“荔枝妈妈”萌宝大赛，叔叔阿姨、哥哥姐姐帮忙投一票呀!', // 分享标题
         desc: "荔枝妈妈萌宝大赛：万元大礼等你来拿", // 分享描述
 
-        link: 'http://hz3.whiletime.com/mengbaoDist/html/babydetail.html?sfid=1&bid='+bid,
-        imgUrl: 'http://hz3.whiletime.com/mengbaoDist/img/top.png', // 分享图标
+        link: 'http://whiletime.com/mengbaoDist/html/babydetail.html?sfid=1&bid='+bid,
+        imgUrl: 'http://whiletime.com/mengbaoDist/img/top.png', // 分享图标
         success: function() {
 
 

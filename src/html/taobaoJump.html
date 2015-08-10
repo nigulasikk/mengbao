@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="kk" content="">
+<style>
+    body{
+        position: fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.63);
+    }
+</style>
+    <title>淘宝链接跳转</title>
+</head>
+
+<body>
+    <img src="../img/jump.png" width="100%" style="float: right;">
+    <script src="../ui/jquery/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script src="../js/mengbaoTool.js"></script>
+    <script>
+
+        function isWechat() {
+            return (navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger");
+
+        }
+        if(!isWechat()){
+            window.location.href="http://shop58633780.m.taobao.com";
+        }
+
+        mengbaoTools.initBanner();
+
+
+        //分享
+        mengbaoTools.initWxShare();
+        wx.ready(function() {
+            wx.onMenuShareTimeline({
+                title: '我在参加“荔枝妈妈”首届萌宝大赛，万元大礼等你拿，只要你参加就有礼品！', // 分享标题
+                link: 'http://whiletime.com/mengbaoDist/html/center.html?sfid=1', // 分享链接
+                imgUrl: 'http://whiletime.com/mengbaoDist/img/top.png', // 分享图标
+                success: function() {
+
+                },
+                cancel: function() {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+            wx.onMenuShareAppMessage({
+//
+                title: '我在参加“荔枝妈妈”首届萌宝大赛，万元大礼等你拿，只要你参加就有礼品！', // 分享标题
+                desc: "荔枝妈妈萌宝大赛：万元大礼等你来拿", // 分享描述
+
+                link: 'http://whiletime.com/mengbaoDist/html/center.html?sfid=1', // 分享链接
+
+                imgUrl: 'http://whiletime.com/mengbaoDist/img/top.png', // 分享图标
+                success: function() {
+
+
+                },
+                cancel: function() {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+            // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+        });
+
+    </script>
+</body>
+
+</html>
