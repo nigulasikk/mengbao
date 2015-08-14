@@ -122,7 +122,7 @@ var wxImgOpt = (function () {
             success: function (res) {
                 localImgIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
 //                previewImage(localImgIds[0],localImgIds);
-                uploadImgs(localImgIds);
+                uploadIOS(localImgIds);
                 $("#preview-imgs").append(imgListHtml(localImgIds));
 
 
@@ -154,6 +154,25 @@ var wxImgOpt = (function () {
                 serverImgIds.push(res.serverId); // 返回图片的服务器端ID
             }
         });
+    }
+
+    //IOS 上传bug 会只有一张
+    function uploadIOS(lids){
+        var ii = 0, length = lids.length;
+        function uploadIter(){
+            wx.uploadImage({
+                localId: lids[ii], // 需要上传的图片的本地ID，由chooseImage接口获得
+                isShowProgressTips: 1, // 默认为1，显示进度提示
+                success: function (res) {
+                    ii++;
+                    serverImgIds.push(res.serverId); // 返回图片的服务器端ID
+                    if (ii < length) {
+                        uploadIter();
+                    }
+                }
+            });
+        }
+        uploadIter();
     }
 
 //缩略图预览

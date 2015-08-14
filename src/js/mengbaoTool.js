@@ -50,7 +50,7 @@ var mengbaoTools = (function() {
     }
 
     function randomPic(){
-        var randomNum=Math.floor(Math.random()*4);
+        var randomNum=Math.floor(Math.random()*5);
         return "../img/adv/ad"+randomNum+".jpg";
     }
     function getJoinInfo() {
