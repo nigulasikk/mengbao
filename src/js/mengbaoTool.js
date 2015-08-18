@@ -31,7 +31,7 @@ var mengbaoTools = (function() {
                         swal({
                             title: "",
                             showConfirmButton: false,
-                            text: "请进入微信公众号“荔枝妈妈”点击菜单栏【萌宝大赛】进行投票<br><a href='http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd'><button>点我投票</button></a><img style='margin-top:30px;' width='220' src='"+mengbaoTools.randomPic()+"'>",
+                            text: "请进入微信公众号“荔枝妈妈”点击菜单栏【萌宝大赛】进行投票<br><a href='http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207512386&idx=1&sn=d2e302c89ba38c96069c96f921847921&scene=0#rd'><button>点我投票</button></a>"+mengbaoTools.randomPic(),
                             html: true
                         },function(){
                         });
@@ -51,7 +51,17 @@ var mengbaoTools = (function() {
 
     function randomPic(){
         var randomNum=Math.floor(Math.random()*5);
-        return "../img/adv/ad"+randomNum+".jpg";
+        var url1="http://mp.weixin.qq.com/s?__biz=MzAwOTMzNzkwMQ==&mid=208574211&idx=1&sn=8f911382db59a8518b26240af5081882#rd";
+        var url2="http://wap.koudaitong.com/v2/feature/e2er2zf2";
+        var url3="http://mp.weixin.qq.com/s?__biz=MzA3MzQ4OTk2OQ==&mid=208464299&idx=1&sn=8770f5494abe9fe32ba1e447f4f475f7#rd";
+        var url4="http://mp.weixin.qq.com/s?__biz=MzAwMTEyNzI5Mg==&mid=205231980&idx=1&sn=6e7c71a3be63f4543d74e481685a441b&scene=1&key=0acd51d81cb052bc8eb309208d7498f0fff5f5f324b4956ce8965599505f92414934d1c2c5dbf4b00504967be50330ed&ascene=1&uin=MTQ5NzkwMzIyMA%3D%3D&devicetype=webwx&version=70000001&pass_ticket=DlYd7cF3JxKRIgp8L1FtELAG9DK7MokXcFHis2pIGvsoaLyWSZNv9BHpK3x1Z4%2Fd";
+        var url5="http://mp.weixin.qq.com/s?__biz=MzI4NTAwNzI4MA==&mid=211328080&idx=1&sn=ed4a0076c1472e0ecbbba19dbfeb791c&scene=0#rd";
+        var advUrls=[url1,url2,url3,url4,url5];
+
+//        return "../img/adv/ad"+randomNum+".jpg";
+
+        return "<a href='"+advUrls[randomNum]+"'><img style='margin-top:30px;' width='220' src='../img/adv/ad"+randomNum+".jpg'>"+"</a>";
+
     }
     function getJoinInfo() {
         $.ajax({
