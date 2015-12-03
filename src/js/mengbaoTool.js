@@ -60,7 +60,7 @@ var mengbaoTools = (function() {
 
 //        return "../img/adv/ad"+randomNum+".jpg";
 
-        return "<a href='"+advUrls[randomNum]+"'><img style='margin-top:30px;' width='220' src='../img/adv/ad"+randomNum+".jpg'>"+"</a>";
+        return "<a href='"+advUrls[0]+"'><img style='margin-top:30px;' width='220' src='../img/adv/ad"+0+".jpg'>"+"</a>";
 
     }
     function getJoinInfo() {

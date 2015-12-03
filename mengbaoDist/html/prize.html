@@ -1,12 +1,106 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"><meta name="description" content=""><meta name="kk" content=""><link rel="stylesheet" type="text/css" href="../css/mengbaoless.css"><link rel="stylesheet" href="../ui/sweetalert/sweetalert.css"><title>萌宝大赛奖品</title></head><body><div class="top-fixed"><a href="http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207534076&idx=1&sn=273f9cf1b433d18fdbbed99e03ad8c15&scene=1&key=0acd51d81cb052bcdeeec26efd22db85a40fa9b9c12502ff5593af4844a05b8bccd5f49244d9253c0bbe27efaf52d411&ascene=0&uin=NzYyNTA1MzAw&devicetype=iMac+MacBookPro11%2C1+OSX+OSX+10.9.5+build(13F1077)&version=11020012&pass_ticket=CjIouF5kRsygvyUVZFGMaVTILTvLIXUTzpzr3bzrLbcC%2BtNvZr1PFfzcZU3nBH9F"><img src="../img/guize.png" style="width:80px"></a> <a href="http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207552265&idx=1&sn=4d78cb4ee9babe67be30372a27a49da8#rd"><img src="../img/lapiao.png" style="width:80px"></a></div><div class="bottom-bar"><div class="inline-block width33 index" style="border-left:none"><img class="bottom-btn" src="../img/btn-index.png"></div><div id="my-baby-tab" class="inline-block width33 mybaby"><img class="bottom-btn" src="../img/btn-mybaby.png"></div><div id="want-join-tab" class="inline-block width33 add"><img class="bottom-btn" src="../img/btn-join.png"></div><div class="inline-block width33 prize"><img class="bottom-btn" src="../img/btn-prize.png"></div></div><div class="top"><img src="../img/jp1.png" class="mengbao-banner"></div><p style="line-height: 25px;width: 85%;margin:0 auto"><span class="base-color bigger-font">参加方式：</span> 搜索“荔枝妈妈”微信号：lizhimama1，点击萌宝大赛菜单，然后按提示上传您的宝宝照片即可，如无法自行上传照片，请加微信客服号：wetime001或者QQ客服号：2782959974，由工作人员帮您上传。<br><br>当因访问量过大，导致有时链接无法访问，此时在公众号荔枝妈妈【lizhimama1】的微信对话框输入“萌宝”获取最新活动链接即可进入。<br><br>活动时间：2015年8月10日-8月24日00:00<br><br>名单公布：2015年8月26日<br><br>奖品发放：2015年8月26日-9月5日</p><!-- 最新参赛 --><div class="title-marker"><img src="../img/prize.png" width="80%"></div><img src="../img/jp2.jpg" class="mengbao-banner"> <img src="../img/jp3.jpg" class="mengbao-banner"><div class="banner max-width"><ul style="padding:0;margin:0" id="ad"><!--<li>--><!--<div class="top max-width" >--><!--<a href="http://mp.weixin.qq.com/s?__biz=MzAwOTMzNzkwMQ==&mid=208574211&idx=1&sn=8f911382db59a8518b26240af5081882#rd">--><!--<img src="../img/adv/prizeAd0.jpg" class="mengbao-banner">--><!--</a>--><!--</div>--><!--</li> <li>--><!--<div class="top max-width" >--><!--<a href="http://mp.weixin.qq.com/s?__biz=MzAwMTMwMDgyNA==&mid=210500484&idx=1&sn=e60b76d78fe80ea59eeb7f29209838e4&scene=2&from=timeline&isappinstalled=0#rd">--><!--<img src="../img/adv/prizeAd1.jpg" class="mengbao-banner">--><!--</a>--><!--</div>--><!--</li> <li>--><!--<div class="top max-width" >--><!--<a href="http://mp.weixin.qq.com/s?__biz=MzA3MzQ4OTk2OQ==&amp;mid=208308928&idx=1&sn=5b9f8f1ede4556c8d934030327756b45&scene=0#rd">--><!--<img src="../img/adv/prizeAd2.jpg" class="mengbao-banner">--><!--</a>--><!--</div>--><!--</li>--></ul></div><script src="../ui/jquery/jquery.min.js"></script><script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script><script src="../ui/jquery.event.move.js"></script><script src="../ui/jquery.event.swipe.js"></script><script src="../ui/unslide/unslider.min.js"></script><script src="../js/mengbaoTool.js"></script><script>//随机广告位
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="kk" content="">
+    <link rel="stylesheet" type="text/css" href="../css/mengbaoless.css">
+    <link rel="stylesheet" href="../ui/sweetalert/sweetalert.css">
+
+    <title>萌宝大赛奖品</title>
+</head>
+
+<body>
+<div class="top-fixed">
+    <a href="http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207534076&idx=1&sn=273f9cf1b433d18fdbbed99e03ad8c15&scene=1&key=0acd51d81cb052bcdeeec26efd22db85a40fa9b9c12502ff5593af4844a05b8bccd5f49244d9253c0bbe27efaf52d411&ascene=0&uin=NzYyNTA1MzAw&devicetype=iMac+MacBookPro11%2C1+OSX+OSX+10.9.5+build(13F1077)&version=11020012&pass_ticket=CjIouF5kRsygvyUVZFGMaVTILTvLIXUTzpzr3bzrLbcC%2BtNvZr1PFfzcZU3nBH9F">
+        <img src="../img/guize.png" style="width:80px;">
+    </a>
+    <a href="http://mp.weixin.qq.com/s?__biz=MzI5ODAwNTY2MA==&mid=207552265&idx=1&sn=4d78cb4ee9babe67be30372a27a49da8#rd">
+        <img src="../img/lapiao.png" style="width:80px;">
+    </a>
+</div>
+
+    <div class="bottom-bar">
+        <div class="inline-block width33 index" style="border-left:none;"><img class="bottom-btn" src="../img/btn-index.png" ></div><div id="my-baby-tab"  class="inline-block width33 mybaby"><img class="bottom-btn" src="../img/btn-mybaby.png" ></div><div id="want-join-tab"  class="inline-block width33 add"><img class="bottom-btn" src="../img/btn-join.png" ></div><div class="inline-block width33 prize"><img class="bottom-btn" src="../img/btn-prize.png" ></div>
+    </div>
+    <div class="top">
+        <img src="../img/jp1.png" class="mengbao-banner">
+    </div>
+    <p style="line-height: 25px;width: 85%;margin:0 auto;">
+        <span class="base-color bigger-font">参加方式：</span>
+        搜索“荔枝妈妈”微信号：lizhimama1，点击萌宝大赛菜单，然后按提示上传您的宝宝照片即可，如无法自行上传照片，请加微信客服号：wetime001或者QQ客服号：2782959974，由工作人员帮您上传。
+    <br>
+    <br>
+        当因访问量过大，导致有时链接无法访问，此时在公众号荔枝妈妈【lizhimama1】的微信对话框输入“萌宝”获取最新活动链接即可进入。
+        <br>
+        <br>
+        活动时间：2015年8月10日-8月24日00:00
+        <br>
+        <br>
+
+        名单公布：2015年8月26日
+        <br>
+        <br>
+
+        奖品发放：2015年8月26日-9月5日
+    </p>
+    <!-- 最新参赛 -->
+    <div class="title-marker">
+        <img src="../img/prize.png" width="80%">
+    </div>
+    <img src="../img/jp2.jpg" class="mengbao-banner">
+    <img src="../img/jp3.jpg" class="mengbao-banner">
+    <div class="banner max-width">
+        <ul style="padding:0;margin:0;" id="ad">
+            <!--<li>-->
+                <!--<div class="top max-width" >-->
+                    <!--<a href="http://mp.weixin.qq.com/s?__biz=MzAwOTMzNzkwMQ==&mid=208574211&idx=1&sn=8f911382db59a8518b26240af5081882#rd">-->
+
+                    <!--<img src="../img/adv/prizeAd0.jpg" class="mengbao-banner">-->
+                        <!--</a>-->
+                <!--</div>-->
+            <!--</li> <li>-->
+                <!--<div class="top max-width" >-->
+                    <!--<a href="http://mp.weixin.qq.com/s?__biz=MzAwMTMwMDgyNA==&mid=210500484&idx=1&sn=e60b76d78fe80ea59eeb7f29209838e4&scene=2&from=timeline&isappinstalled=0#rd">-->
+                    <!--<img src="../img/adv/prizeAd1.jpg" class="mengbao-banner">-->
+                        <!--</a>-->
+                <!--</div>-->
+            <!--</li> <li>-->
+                <!--<div class="top max-width" >-->
+                    <!--<a href="http://mp.weixin.qq.com/s?__biz=MzA3MzQ4OTk2OQ==&amp;mid=208308928&idx=1&sn=5b9f8f1ede4556c8d934030327756b45&scene=0#rd">-->
+
+                    <!--<img src="../img/adv/prizeAd2.jpg" class="mengbao-banner">-->
+                        <!--</a>-->
+                <!--</div>-->
+            <!--</li>-->
+
+
+
+        </ul>
+    </div>
+
+    <script src="../ui/jquery/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script src="../ui/jquery.event.move.js"></script>
+<script src="../ui/jquery.event.swipe.js"></script>
+    <script src="../ui/unslide/unslider.min.js"></script>
+<script src="../js/mengbaoTool.js"></script>
+    <script>
+
+        //随机广告位
         function topRandomAd(){
             var ad1=' <li> <div class="top max-width"> <a href="http://mp.weixin.qq.com/s?__biz=MzAwOTMzNzkwMQ==&mid=208574211&idx=1&sn=8f911382db59a8518b26240af5081882#rd"> <img src="../img/adv/prizeAd0.jpg" class="mengbao-banner"> </a> </div> </li>';
-           var ad2='<li> <div class="top max-width"> <a href="http://mp.weixin.qq.com/s?__biz=MzAwMTMwMDgyNA==&mid=210500484&idx=1&sn=e60b76d78fe80ea59eeb7f29209838e4&scene=2&from=timeline&isappinstalled=0#rd"> <img src="../img/adv/prizeAd1.jpg" class="mengbao-banner"> </a> </div> </li>';
-           var ad3='<li> <div class="top max-width"> <a href="taobaoJump.html"> <img src="../img/adv/prizeAd2.jpg" class="mengbao-banner"> </a> </div> </li>';
-           var ad4='<li> <div class="top max-width"> <a href="http://mp.weixin.qq.com/s?__biz=MzAwMTEyNzI5Mg==&mid=205231980&idx=1&sn=6e7c71a3be63f4543d74e481685a441b&scene=1&key=0acd51d81cb052bc8eb309208d7498f0fff5f5f324b4956ce8965599505f92414934d1c2c5dbf4b00504967be50330ed&ascene=1&uin=MTQ5NzkwMzIyMA%3D%3D&devicetype=webwx&version=70000001&pass_ticket=DlYd7cF3JxKRIgp8L1FtELAG9DK7MokXcFHis2pIGvsoaLyWSZNv9BHpK3x1Z4%2Fd"> <img src="../img/adv/prizeAd3.jpg" class="mengbao-banner"> </a> </div> </li>';
-           var ad5='<li> <div class="top max-width"> <a href="http://mp.weixin.qq.com/s?__biz=MzI4NTAwNzI4MA==&mid=211328080&idx=1&sn=ed4a0076c1472e0ecbbba19dbfeb791c&scene=0#rd"> <img src="../img/adv/prizeAd4.jpg" class="mengbao-banner"> </a> </div> </li>';
+//           var ad2='<li> <div class="top max-width"> <a href="http://mp.weixin.qq.com/s?__biz=MzAwMTMwMDgyNA==&mid=210500484&idx=1&sn=e60b76d78fe80ea59eeb7f29209838e4&scene=2&from=timeline&isappinstalled=0#rd"> <img src="../img/adv/prizeAd1.jpg" class="mengbao-banner"> </a> </div> </li>';
+//           var ad3='<li> <div class="top max-width"> <a href="taobaoJump.html"> <img src="../img/adv/prizeAd2.jpg" class="mengbao-banner"> </a> </div> </li>';
+//           var ad4='<li> <div class="top max-width"> <a href="http://mp.weixin.qq.com/s?__biz=MzAwMTEyNzI5Mg==&mid=205231980&idx=1&sn=6e7c71a3be63f4543d74e481685a441b&scene=1&key=0acd51d81cb052bc8eb309208d7498f0fff5f5f324b4956ce8965599505f92414934d1c2c5dbf4b00504967be50330ed&ascene=1&uin=MTQ5NzkwMzIyMA%3D%3D&devicetype=webwx&version=70000001&pass_ticket=DlYd7cF3JxKRIgp8L1FtELAG9DK7MokXcFHis2pIGvsoaLyWSZNv9BHpK3x1Z4%2Fd"> <img src="../img/adv/prizeAd3.jpg" class="mengbao-banner"> </a> </div> </li>';
+//           var ad5='<li> <div class="top max-width"> <a href="http://mp.weixin.qq.com/s?__biz=MzI4NTAwNzI4MA==&mid=211328080&idx=1&sn=ed4a0076c1472e0ecbbba19dbfeb791c&scene=0#rd"> <img src="../img/adv/prizeAd4.jpg" class="mengbao-banner"> </a> </div> </li>';
 
-            var a=[ad1,ad2,ad3,ad4,ad5].sort(function(a,b){ return Math.random()>.5 ? -1 : 1;});
+//            var a=[ad1,ad2,ad3,ad4,ad5].sort(function(a,b){ return Math.random()>.5 ? -1 : 1;});
+            var a=[ad1].sort(function(a,b){ return Math.random()>.5 ? -1 : 1;});
             var outHtml="";
             for(var i=0;i<a.length;i++){
                 outHtml+=a[i];
@@ -52,4 +146,9 @@
             });
 
             // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-        });</script></body></html>
+        });
+
+    </script>
+</body>
+
+</html>
