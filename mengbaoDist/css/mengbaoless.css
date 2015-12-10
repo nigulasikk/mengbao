@@ -4,7 +4,7 @@
 html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 body{margin:0;padding-bottom:100px}
 .mengbao-banner{width:100%}
-.width33,.width33-base{box-sizing:border-box;text-align:center;width:33%}
+.width33,.width33-base{width:33%;text-align:center;box-sizing:border-box}
 .text-center{text-align:center}
 .title-marker{margin:20px;text-align:center}
 .max-width{max-width:420px;margin:0 auto}
